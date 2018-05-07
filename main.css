@@ -73,6 +73,10 @@ nav a:hover {
     border-bottom: 1px solid #D6EFF9;
 }
 
+.mobile-menu {
+    display: none;
+}
+
 #main, #footer {
     width: 100%;
     padding: 0;
@@ -127,13 +131,126 @@ nav a:hover {
 @media screen and (orientation:portrait) {
     #wrapper {
         background-image: url(img/background_mobile.png);
-        background-size: initial;
+        background-size: cover;
+        width: 100%;
     }
     #hero_web {
         display: none;
     } 
     #hero_mobile {
         display: initial;
-    }   
+        width: 100%;
+    }
+
+    #home_button {
+        display: none;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    #icons {
+        margin-left: 0rem;
+    }
+
+    #icons img {
+        padding-right: 0.5rem;
+        margin-left: -1rem;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 35%;
+    }
+
+    #labels h1 {
+        padding-right: 0rem;
+        padding-left: 0rem;
+        margin-top: -1rem;
+        margin-left: -.5rem;
+        margin-right: 3.5rem;
+    }
+
+    .mobile-menu {
+        display: initial;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        height: 50px;
+        line-height: 50px;
+        /* disable text selection by clicking */
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;
+        z-index: 1;
+      }
+      
+      .mobile-menu a.dropdown-link{
+        display: block;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 20px;
+        cursor: pointer;
+        background-image: url(img/mobile_head.png);
+      }
+      
+      .mobile-menu a.dropdown-link:hover{
+          text-decoration: none;
+      }
+      .mobile-menu a.dropdown-link i{
+          float: right;
+          position: relative;
+          top: 15px;
+      }
+      
+      .mobile-dropdown {
+        display: none;
+        list-style-type: none;
+        background: rgba(11,32,59, 0.85);
+        padding: 0;
+        min-width: 125px;
+        position: relative;
+        z-index: 100;
+        margin: 0;
+      }
+      
+      .mobile-dropdown li{
+        padding: 0;
+        height: auto;
+      }
+      
+      .mobile-dropdown li a{
+        padding: 0;
+        color: #FED02E;
+        display: block;
+        padding: 0 20px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+        text-decoration: none;
+        border: solid 1px black;
+      }
+      
+      .mobile-dropdown li a:hover{
+        text-decoration: none;
+        background: #00adef;
+    }
+
+    #content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    #content p {
+        padding-left: 0rem;
+        padding-right: 0rem;
+        font-size: .8em;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+    }
 
 }

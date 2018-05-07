@@ -1,9 +1,9 @@
-// $(document).ready(function() {
-// 	$(".mobile-menu").on('click', function(){
-//         console.log('menu_toggled');
-// 		$(".mobile-dropdown").slideToggle("fast");
-// 	});
-// });
+$(document).ready(function() {
+	$(".mobile-menu").on('click', function(){
+        console.log('menu_toggled');
+		$(".mobile-dropdown").slideToggle("fast");
+	});
+});
 
 // function stext() {
 //     var x = document.getElementById("pastLink");
