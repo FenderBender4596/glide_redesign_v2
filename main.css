@@ -192,11 +192,11 @@ nav a:hover {
 }
 
 #memberInfo {
-    margin-left: 2.5rem;
+    margin-left: 0rem;
 }
 
 #memberInfo h2 {
-    font-size: 1.15em;
+    font-size: 1em;
 }
 
 @media screen and (orientation:portrait) {
