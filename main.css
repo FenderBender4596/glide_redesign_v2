@@ -90,6 +90,12 @@ nav a:hover {
     padding: .25rem;
 }
 
+#pageHeader {
+    text-align: center;
+    color: #FED02E;
+    font-family: 'Roboto', sans-serif;
+}
+
 #content {
     display: flex;
     flex-direction: column;
@@ -98,10 +104,32 @@ nav a:hover {
     padding-right: 5rem;
 }
 
+#readBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 5rem;
+    margin-bottom: 0rem;
+    background-color: #084887;
+    padding-bottom: 1rem;
+    margin-right: 6rem;
+    width: 80%;
+}
+
+#readBox p {
+    padding-right: 1rem;
+    margin-right: 1rem;
+}
+
 #content p {
     padding-left: 5rem;
     padding-right: 5rem;
     font-size: 1.25em;
+}
+
+#diagram {
+    margin-right: -6rem;
+    padding-right: 3rem;
 }
 
 #icons, #labels {
@@ -126,6 +154,49 @@ nav a:hover {
     padding-right: 10rem;
     padding-left: 4.5rem;
     margin-top: -1rem;
+}
+
+#directory {
+    width: 100%;
+    height: auto;
+}
+
+#directory h1 {
+    font-family: 'Muli', sans-serif;
+    font-size: 1.45em;
+    text-align: center;
+}
+
+#directorySection {
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding-left: 3.5rem;
+}
+
+.team_member {
+    margin-left: 1rem;
+    padding: 1rem;
+}
+
+.team_member a {
+    text-decoration: none;
+    color: black;
+}
+
+#thumbnail {
+    width: 75%;
+}
+
+#memberInfo {
+    margin-left: 2.5rem;
+}
+
+#memberInfo h2 {
+    font-size: 1.15em;
 }
 
 @media screen and (orientation:portrait) {
