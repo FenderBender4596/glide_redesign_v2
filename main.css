@@ -8,17 +8,16 @@
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: #0B203B;
-    
+    background: url(img/background_web.png), #0B203B;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #D6EFF9; 
-    }
-
+    }   
 
 #wrapper {
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-image: url(img/background_web.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -86,8 +85,11 @@ nav a:hover {
 #footer {
     text-align: center;
     color: #FED02E;
-    background-color: #084887;
+    /* background-color: #084887; */
+    background-color: #135291;
     padding: .25rem;
+    position: relative;
+    margin-bottom: 0;
 }
 
 #pageHeader {
@@ -127,7 +129,7 @@ nav a:hover {
     font-size: 1.25em;
 }
 
-#diagram {
+#diagram, #email {
     margin-right: -6rem;
     padding-right: 3rem;
 }
@@ -151,8 +153,8 @@ nav a:hover {
 #labels h1 {
     font-family: 'Muli', sans-serif;
     font-size: 1em;
-    padding-right: 10rem;
-    padding-left: 4.5rem;
+    padding-right: 10.5rem;
+    padding-left: 4.3rem;
     margin-top: -1rem;
 }
 
@@ -177,6 +179,10 @@ nav a:hover {
     padding-left: 3.5rem;
 }
 
+#directorySection img {
+    border-radius: 100%;
+}
+
 .team_member {
     margin-left: 1rem;
     padding: 1rem;
@@ -199,10 +205,142 @@ nav a:hover {
     font-size: 1em;
 }
 
+#pubListContent, #projectListContent {
+    background-color: #084887;
+    padding: .5rem 4rem 1rem 2rem;
+}
+
+#pubListContent h2, #projectListContent h2 {
+    border-bottom: 1.5px solid;
+    border-spacing: 1px;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+#pubListContent ul {
+    font-style: italic;
+    list-style: none;
+}
+
+#pubListContent li {
+    padding-right: 1rem;
+}
+
+#project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-bottom: 1.5rem;
+}
+
+#project img {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#project p {
+    margin: 1rem;
+}
+
+#projectListContent h2 {
+    text-align: center;
+}
+
+#projects {
+    display: none;
+}
+
+/* utility CSS */
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* Page Transitions */
+
+#pageloader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* center children content horizontally */
+    align-items: center; /* center children content vertically */
+    z-index: 10000;
+    background: #0B203B;
+} 
+
+.spinner {
+    width: 70px;
+    text-align: center;
+    opacity: 1;
+    transition: opacity .4s;
+}
+ 
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #FED02E;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+ 
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+ 
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+#pageloader.dimissloader{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 0s 1s;
+}
+
+html.hidescrollbar{
+    overflow: hidden;
+}
+ 
+html.hidescrollbar body{
+    overflow: hidden;
+}
+
+body.fadeout{
+    opacity: 0;
+    transition: all 1s;
+}
+
+/* animation CSS */
+
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 40% { 
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+  }
+
 @media screen and (orientation:portrait) {
+    html {
+        background: url(img/background_mobile2.png), #0B203B;
+        background-repeat: no-repeat;
+    }
+
     #wrapper {
-        background-image: url(img/background_mobile.png);
-        background-size: cover;
         width: 100%;
     }
     #hero_web {
@@ -263,7 +401,8 @@ nav a:hover {
         padding: 0 20px;
         font-size: 20px;
         cursor: pointer;
-        background-image: url(img/mobile_head.png);
+        background-image: url(img/mobile_head3.png);
+        color: #FED02E;
       }
       
       .mobile-menu a.dropdown-link:hover{
@@ -319,9 +458,90 @@ nav a:hover {
         font-size: .8em;
     }
 
-    #footer {
-        position: fixed;
-        bottom: 0;
+    #pubListContent {
+        padding: 0.5rem 1rem 0rem 1rem;
+        background-color: #084887;
+    }
+
+    #pubListContent h2 {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+
+    #pubListContent li {
+        padding: 0rem 2rem 0rem 0rem;
+        font-size: .8em;
+    }
+
+    #projectListContent {
+        display: none;
+    }
+
+    #projects {
+        background-color: #084787;
+        display: inherit;
+    }
+
+    #projects h2 {
+        text-align: center;
+        border-bottom: 1.5px solid;
+        width: 80%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-left: 2.5rem;
+    }
+
+    #projects h3 {
+        margin-top: -2rem;
+        margin-left: 1rem;
+        font-style: italic;
+        color: #FED02E;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #projects a {
+        text-decoration: none;
+    }
+
+    #readBox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-left: 0rem;
+        margin-bottom: 0rem;
+        background-color: #084887;
+        padding-bottom: 0rem;
+        margin-right: 0rem;
+        width: 100%;
+    }
+
+    #readBox p {
+        padding-right: 1rem;
+        margin-right: 1rem;
+        padding-left: 2rem;
+        padding-top: .5rem; 
+    }
+
+    #diagram, #email {
+        margin-right: 0rem;
+        padding-right: 0rem;
+        width: 100%;
+    }
+
+    #diagram img {
+        width: 100%;
+    }
+
+    #email img {
+        width: 50%;
+    }
+
+    #directorySection {
+        grid-template-columns: repeat(2, 2fr);
+        padding-left: 0rem;
+    }
+
+    #directorySection img {
+        border-radius: 100%;
     }
 
 }
